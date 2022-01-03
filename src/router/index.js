@@ -1,27 +1,48 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+import UserMain from '../views/UserMain.vue'
+import HistoryList from '../views/HistoryList.vue'
+import ManageMain from '../views/ManageMain.vue'
+import DeleteDish from '../views/DeleteDish.vue'
+import ListManage from '../views/ListManage.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name:UserMain,
+    component: UserMain
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/HistoryList',
+    component: HistoryList
+  },
+  {
+    path: '/ManageMain',
+    component: ManageMain
+  },
+  {
+    path: '/ListManage',
+    component: ListManage
+  },
+  {
+    path:'/DeleteDish',
+    component: DeleteDish
+  },
+  {
+    path:'/Login',
+    component: Login
+  },
+  {
+    path:'/Register',
+    component: Register
+  },
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })
